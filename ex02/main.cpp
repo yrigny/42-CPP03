@@ -5,30 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/15 19:53:52 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/15 19:53:55 by yrigny           ###   ########.fr       */
+/*   Created: 2024/07/13 21:24:53 by yrigny            #+#    #+#             */
+/*   Updated: 2024/07/15 19:52:25 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 #define GREEN "\033[1;32m"
 #define NONE "\033[0m"
 
-void	getStat(ScavTrap& obj) {
-	std::cout << GREEN "Status: " NONE << obj.getName() << " has " << obj.getHitPoints() << " hit points, " << obj.getEnergyPoints() << " energy points, " << obj.getAttackDamage() << " attack damage, " << "gate keeper mode = " << obj.getMode()  << std::endl;
+void	getStat(FragTrap& obj) {
+	std::cout << GREEN "Status: " NONE << obj.getName() << " has " << obj.getHitPoints() << " hit points, " << obj.getEnergyPoints() << " energy points, " << obj.getAttackDamage() << " attack damage." << std::endl;
 }
 
 int main(void) {
 	std::cout << "Construction order:" << std::endl;
-	ScavTrap	a("a");
-	ScavTrap	b("b");
+	FragTrap	a("a");
+	FragTrap	b("b");
 
-	std::cout << std::endl << "Test for ScavTrap's Gate Keeper Mode:" << std::endl;
-	getStat(a);
-	a.guardGate();
-	getStat(a);
-	a.guardGate();
-	getStat(a);
+	std::cout << std::endl << "Test for FragTrap's highFiveGuys() method:" << std::endl;
+	a.highFiveGuys();
 
 	std::cout << std::endl << "Test for methods inherited from class ClapTrap:" << std::endl;
 	getStat(a);
