@@ -6,7 +6,7 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 21:26:32 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/13 21:41:20 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/15 19:31:46 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap() {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-	this->gateKeeperMode = false;
+	this->gate_keeper_mode = false;
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;	
@@ -22,6 +22,7 @@ ScavTrap::ScavTrap(void) : ClapTrap() {
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "ScavTrap default constructor called for " << name << std::endl;
+	this->gate_keeper_mode = false;
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;
@@ -55,12 +56,16 @@ void	ScavTrap::attack(const std::string& target) {
 }
 
 void	ScavTrap::guardGate(void) {
-	if (gateKeeperMode == false) {
-		gateKeeperMode = true;
+	if (gate_keeper_mode == false) {
+		gate_keeper_mode = true;
 		std::cout << "ScavTrap " << getName() << " is now in Gate keeper mode!" << std::endl;
 	}
 	else {
-		gateKeeperMode = false;
+		gate_keeper_mode = false;
 		std::cout << "ScavTrap " << getName() << " is no more in Gate keeper mode!" << std::endl;	
 	}
+}
+
+bool	ScavTrap::getMode(void) {
+	return gate_keeper_mode;
 }

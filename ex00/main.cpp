@@ -6,7 +6,7 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 12:08:05 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/15 18:27:49 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/15 19:26:32 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,51 +19,48 @@ void	getStat(ClapTrap& obj) {
 }
 
 int main(void) {
+	// constructor message
     ClapTrap    a("a");
     ClapTrap    b("b");
 
-	std::cout << std::endl << "Test: round 1" << std::endl;
-    // set attack damage for a and b
-    a.setAttackDamage(3);
-    b.setAttackDamage(5);
-	getStat(a);
-	getStat(b);
-    // a attacks b
-    a.attack("b");
-    b.takeDamage(a.getAttackDamage());
-	getStat(a);
-	getStat(b);
-    // b attacks a
-    b.attack("a");
-    a.takeDamage(b.getAttackDamage());
-	getStat(a);
-	getStat(b);
-	// a and b repair themselves
-	a.beRepaired(4);
-	b.beRepaired(4);
+	std::cout << std::endl << "setting a and b's attack damage to 5..." << std::endl;
+	a.setAttackDamage(5);
+	b.setAttackDamage(5);
 	getStat(a);
 	getStat(b);
 
-	std::cout << std::endl << "Test: round 2" << std::endl;
-    // set new attack damage for a and b
-    a.setAttackDamage(6);
-	b.setAttackDamage(10);
-	getStat(a);
-	getStat(b);
-	// a attacks b
+	std::cout << std::endl << "case: normal attack() and normal takeDamage()" << std::endl;
 	a.attack("b");
-    b.takeDamage(a.getAttackDamage());
+	b.takeDamage(a.getAttackDamage());
 	getStat(a);
 	getStat(b);
-	// b attacks a
+	b.attack("a");
+	a.takeDamage(b.getAttackDamage());
+	getStat(a);
+	getStat(b);
+
+	std::cout << std::endl << "case: normal beRepaired()" << std::endl;
+	a.beRepaired(1);
+	b.beRepaired(1);
+	getStat(a);
+	getStat(b);
+
+	std::cout << std::endl << "case: takeDamage() when damage received > HP" << std::endl;
+	std::cout << "setting b's attack damage to 10..." << std::endl;
+	b.setAttackDamage(10);
 	b.attack("a");
     a.takeDamage(b.getAttackDamage());
 	getStat(a);
 	getStat(b);
-	// a and b repair themselves
-	a.beRepaired(5);
-	b.beRepaired(5);
+
+	std::cout << std::endl << "case: beRepaired() when hit points = 0" << std::endl;
+	a.beRepaired(1);
 	getStat(a);
+
+	std::cout << std::endl << "case: beRepaired() when energy points = 0" << std::endl;
+	std::cout << "setting b's energy points to 0..." << std::endl;
+	b.setEnergyPoints(-b.getEnergyPoints());
+	b.beRepaired(1);
 	getStat(b);
 
 	// destructor message

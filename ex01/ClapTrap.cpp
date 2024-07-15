@@ -6,7 +6,7 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 12:07:21 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/15 14:45:16 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/15 19:07:05 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ const std::string&	ClapTrap::getName(void) const {
 void    ClapTrap::setHitPoints(int amount) {
     if (amount < 0 && hit_points + amount < 0)
 		hit_points = 0;
-	else if (amount > 0 && hit_points + amount > 10)
-		hit_points = 10;
 	else
 		hit_points += amount;
 }
@@ -104,13 +102,8 @@ unsigned int    ClapTrap::getEnergyPoints(void) const {
 
 void	ClapTrap::setAttackDamage(unsigned int amount) {
 	this->attack_damage = amount;
-	std::cout << getName() << "'s attack damage is set to " << amount << std::endl;
 }
 
 unsigned int	ClapTrap::getAttackDamage(void) const {
 	return this->attack_damage;
-}
-
-void	ClapTrap::getStat(void) const {
-	std::cout << getName() << " has " << getHitPoints() << " hit points, " << getEnergyPoints() << " energy points, " << getAttackDamage() << " attack damage." << std::endl;
 }

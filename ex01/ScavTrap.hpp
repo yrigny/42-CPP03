@@ -6,7 +6,7 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 11:41:52 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/13 21:19:05 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/15 19:31:20 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class   ScavTrap : public ClapTrap {
     
     private:
     
-        bool    gateKeeperMode;
+        bool    gate_keeper_mode;
 
     public:
 
@@ -30,6 +30,8 @@ class   ScavTrap : public ClapTrap {
 
         void    guardGate(void);
         void	attack(const std::string& target);
+
+		bool	getMode();
 };
 
 #endif
