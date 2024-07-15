@@ -6,11 +6,20 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 12:07:21 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/13 11:25:49 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/15 17:02:40 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void) {
+	std::cout << "ClapTrap default constructor called" << std::endl;
+	this->name = "default";
+	this->hit_points = 10;
+	this->energy_points = 10;
+	this->attack_damage = 0;
+	return;	
+}
 
 ClapTrap::ClapTrap(std::string name) {
     std::cout << "Default constructor called for " << name << std::endl;
@@ -75,8 +84,6 @@ const std::string&	ClapTrap::getName(void) const {
 void    ClapTrap::setHitPoints(int amount) {
     if (amount < 0 && hit_points + amount < 0)
 		hit_points = 0;
-	else if (amount > 0 && hit_points + amount > 10)
-		hit_points = 10;
 	else
 		hit_points += amount;
 }
@@ -103,8 +110,4 @@ void	ClapTrap::setAttackDamage(unsigned int amount) {
 
 unsigned int	ClapTrap::getAttackDamage(void) const {
 	return this->attack_damage;
-}
-
-void	ClapTrap::getStat(void) const {
-	std::cout << getName() << " has " << getHitPoints() << " hit points, " << getEnergyPoints() << " energy points, " << getAttackDamage() << " attack damage." << std::endl;
 }

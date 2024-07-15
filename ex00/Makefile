@@ -6,7 +6,7 @@
 #    By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/11 11:49:53 by yrigny            #+#    #+#              #
-#    Updated: 2024/07/13 21:18:26 by yrigny           ###   ########.fr        #
+#    Updated: 2024/07/15 16:29:13 by yrigny           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INCLUDE = ClapTrap.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = ScavTrap
+NAME = ClapTrap
 
 GREEN = \033[1;32m
 
