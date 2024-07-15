@@ -6,14 +6,16 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 12:08:05 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/15 17:04:01 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/15 18:27:49 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+# define GREEN "\033[1;32m"
+# define NONE "\033[0m"
 
 void	getStat(ClapTrap& obj) {
-	std::cout << obj.getName() << " has " << obj.getHitPoints() << " hit points, " << obj.getEnergyPoints() << " energy points, " << obj.getAttackDamage() << " attack damage." << std::endl;
+	std::cout << GREEN "Status: " NONE << obj.getName() << " has " << obj.getHitPoints() << " hit points, " << obj.getEnergyPoints() << " energy points, " << obj.getAttackDamage() << " attack damage." << std::endl;
 }
 
 int main(void) {
