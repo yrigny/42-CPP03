@@ -6,7 +6,7 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 19:41:01 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/15 19:47:07 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/16 19:44:47 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ void	FragTrap::attack(const std::string& target) {
 }
 
 void	FragTrap::highFiveGuys(void) {
-	std::cout << "High five, guys!" << std::endl;
+	std::cout << "FragTrap " << getName() << ": High five, guys!" << std::endl;
 }

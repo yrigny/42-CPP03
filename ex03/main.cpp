@@ -6,7 +6,7 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 20:00:52 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/15 20:02:41 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/16 19:51:11 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,36 @@
 #define GREEN "\033[1;32m"
 #define NONE "\033[0m"
 
-void	getStat(FragTrap& obj) {
-	std::cout << GREEN "Status: " NONE << obj.getName() << " has " << obj.getHitPoints() << " hit points, " << obj.getEnergyPoints() << " energy points, " << obj.getAttackDamage() << " attack damage." << std::endl;
+void	getStat(DiamondTrap& obj) {
+	std::cout << GREEN "Status: " NONE << obj.getName() << " has " << obj.getHitPoints() << " hit points, " << obj.getEnergyPoints() << " energy points, " << obj.getAttackDamage() << " attack damage, " << "gate keeper mode = " << obj.getMode()  << std::endl;
 }
 
 int main(void) {
 	std::cout << "Construction order:" << std::endl;
-	FragTrap	a("a");
-	FragTrap	b("b");
+	DiamondTrap	a("a");
+	DiamondTrap	b("b");
 
-	std::cout << std::endl << "Test for FragTrap's highFiveGuys() method:" << std::endl;
-	a.highFiveGuys();
+	std::cout << std::endl << "Test for copy constructor:" << std::endl;
+	DiamondTrap	c(a);
 
-	std::cout << std::endl << "Test for methods inherited from class ClapTrap:" << std::endl;
+	std::cout << std::endl << "Test for copy assignment operator:" << std::endl;
+	DiamondTrap	d = b;
+
+	std::cout << std::endl << "Test for DiamondTrap's method whoAmI():" << std::endl;
+	c.whoAmI();
+	d.whoAmI();
+
+	std::cout << std::endl << "Test for method guardGate() inherited from ScavTrap:" << std::endl;
+	getStat(c);
+	c.guardGate();
+	getStat(c);
+	c.guardGate();
+	getStat(c);
+
+	std::cout << std::endl << "Test for method highFiveGuys() inherited from FragTrap:" << std::endl;
+	d.highFiveGuys();
+
+	std::cout << std::endl << "Test for methods inherited from ClapTrap:" << std::endl;
 	getStat(a);
 	getStat(b);
 

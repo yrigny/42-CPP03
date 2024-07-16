@@ -6,7 +6,7 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 11:41:52 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/15 19:55:39 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/16 16:56:18 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define SCAVTRAP_HPP
 # include "ClapTrap.hpp"
 
-class   ScavTrap : public ClapTrap {
+class   ScavTrap : virtual public ClapTrap {
     
-    private:
+    protected:
     
         bool    gate_keeper_mode;
 

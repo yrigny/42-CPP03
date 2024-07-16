@@ -6,7 +6,7 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 19:53:52 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/15 19:53:55 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/16 18:25:24 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void) {
 	ScavTrap	a("a");
 	ScavTrap	b("b");
 
-	std::cout << std::endl << "Test for ScavTrap's Gate Keeper Mode:" << std::endl;
+	std::cout << std::endl << "Test for ScavTrap's method guardGate():" << std::endl;
 	getStat(a);
 	a.guardGate();
 	getStat(a);

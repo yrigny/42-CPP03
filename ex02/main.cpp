@@ -6,7 +6,7 @@
 /*   By: yrigny <yrigny@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 21:24:53 by yrigny            #+#    #+#             */
-/*   Updated: 2024/07/15 19:52:25 by yrigny           ###   ########.fr       */
+/*   Updated: 2024/07/16 18:25:54 by yrigny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void) {
 	FragTrap	a("a");
 	FragTrap	b("b");
 
-	std::cout << std::endl << "Test for FragTrap's highFiveGuys() method:" << std::endl;
+	std::cout << std::endl << "Test for FragTrap's method highFiveGuys():" << std::endl;
 	a.highFiveGuys();
 
 	std::cout << std::endl << "Test for methods inherited from class ClapTrap:" << std::endl;
